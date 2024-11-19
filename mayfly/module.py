@@ -26,11 +26,11 @@ class Module(ABC):
 
     @abstractmethod
     def forward(self, input_data: Any) -> Any:
-        """Main computation."""
+        """Main computation"""
         pass
 
     def __call__(self, input_data: Any) -> Any:
-        """Wrapper around forward to track metadata."""
+        """Wrapper around forward to track metadata"""
         output = self.forward(input_data)
         self.metadata = ModuleMetadata(
             module_id=self.module_id,
